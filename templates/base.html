@@ -8,16 +8,55 @@
 </head>
 <body>
     <header>
-
+        <nav class="navbar navbar-expand-lg navbar-light bg-#233c98 w-100" style="background-color:#344ba0;" >
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <a class="ms-3 navbar-brand ml-4" href="/"style="color:white"; >Medical Authentication System(SLIATE)</a>
+              
+              <ul class="navbar-nav ms-auto pe-3">
+                <li class="nav-item active float-right"   >
+                  
+                  <a class="nav-link" href="/adminlog" style="color:white";><i class="fa-solid fa-user-tie p-1" style="color: #f0be6f;"></i>Admin Login </a>
+                </li>
+                <li class="nav-item float-right" >
+                  <a class="nav-link" href="/userlog" style="color:white";><i class="fa-solid fa-user p-1" style="color: #f0be6f;"></i>User Login</a>
+                </li>
+                
+                <li class="nav-item float-right" >
+                  <a class="nav-link" href="/about" style="color:white";><i class="fa-solid fa-address-card p-1" style="color: #f0be6f;"></i>About Us</a>
+                </li>
+                <li class="nav-item float-right" >
+                  <a class="nav-link" href="/contact" style="color:white";><i class="fa-solid fa-id-badge p-1" style="color: #f0be6f;"></i>Contact Us</a>
+                </li>
+                
+              </ul>
+          
+            </div>
+          </nav>
     </header>
-
+    <!-- messeges -->
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for message,category in messages %}
+          <div class="alert alert-{{category}} alert-dismissible fade show border border-top-0 border border-white h-50 " role="alert">
+              <p class="text-center text-uppercase fs-5 ">{{message}}</p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+          
+        {% endif %}
+      {% endwith %}
+      </div>
     {%block body%}
 
-    
+
 
     {% endblock %}
     <footer>
-
+        
     </footer>
 <script src="../static/js/bootstrap.bundle.js"></script>
 </body>

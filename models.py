@@ -20,7 +20,7 @@ class Attempts(db.Model):
 class Departments(db.Model):
     dep_id = db.Column(db.Integer, primary_key=True)
     dep_code = db.Column(db.String(10))
-    department = db.Column(db.String(100))
+    department_list = db.Column(db.String(100))
     calling_name = db.Column(db.String(50))
     students = db.relationship('Students', backref='departments')
     subjects = db.relationship('Subjects', backref='departments')
